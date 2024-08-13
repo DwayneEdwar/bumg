@@ -1,0 +1,22 @@
+models:
+  Unit:
+    id: string:15
+    unit: string
+    alamat: string
+    timestamps: true
+    relationships:
+      hasMany: Transaction
+
+  Transaction:
+    id: string:20
+    unit_id: string:15
+    tanggal_transaksi: date
+    jenis_transaksi: string
+    quantity: integer
+    satuan: string
+    harga_satuan: integer
+    total: integer
+    deskripsi: text nullable
+    timestamps: true
+    relationships:
+      belongsTo: Unit
